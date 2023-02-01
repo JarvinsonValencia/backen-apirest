@@ -1,6 +1,7 @@
 package com.bolsaideas.spring.backend.apirest.auth;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -35,7 +36,8 @@ public class ResourceServeConfig extends ResourceServerConfigurerAdapter{
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration config = new CorsConfiguration();
-		config.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+		config.setAllowedOriginPatterns(Arrays.asList("http://localhost:4200", "*"));
+		//Arrays.asList("http://localhost:4200", "*")
 		config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 		config.setAllowCredentials(true);
 		config.setAllowedHeaders(Arrays.asList("Content-type", "Authorization")); 

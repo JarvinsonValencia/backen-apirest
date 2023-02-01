@@ -10,7 +10,7 @@ INSERT INTO users_list_roles (list_users_id, list_roles_id) VALUES (1, 2);
 INSERT INTO users_list_roles (list_users_id, list_roles_id) VALUES (2, 2);
 
 
-INSERT INTO regiones (id, name) VALUES (1, 'SudamÃ©rica');
+INSERT INTO regiones (id, name) VALUES (1, 'Sudamérica');
 INSERT INTO regiones (id, name) VALUES (2, 'Europa');
 INSERT INTO regiones (id, name) VALUES (3, 'Asia');
 

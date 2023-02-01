@@ -19,7 +19,7 @@ import com.bolsaideas.spring.backend.apirest.models.entity.Factura;
 import com.bolsaideas.spring.backend.apirest.models.entity.Product;
 import com.bolsaideas.spring.backend.apirest.models.services.IClientService;
 
-@CrossOrigin(origins= {"http://localhost:4200/"})
+@CrossOrigin(origins= {"http://localhost:4200/", "*"})
 @RestController
 @RequestMapping("/api")
 public class FacturaRestController {
