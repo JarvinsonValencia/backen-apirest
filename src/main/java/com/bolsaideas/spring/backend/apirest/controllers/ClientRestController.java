@@ -89,6 +89,8 @@ public class ClientRestController {
 		
 		if (result.hasErrors()) {
 			
+			
+			
 			/*List<String> errors = new ArrayList<>();
 			for(FieldError err : result.getFieldErrors()) {
 				errors.add("El campo '" + err.getField() + "' " + err.getDefaultMessage());

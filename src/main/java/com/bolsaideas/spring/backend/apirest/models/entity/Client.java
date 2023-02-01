@@ -1,8 +1,11 @@
 package com.bolsaideas.spring.backend.apirest.models.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -26,7 +30,6 @@ import lombok.*;
 
 @Entity
 @Data
-@NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Client implements Serializable {
 	
@@ -59,6 +62,16 @@ public class Client implements Serializable {
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@NotNull(message = "La región no puede estar vacía")
 	private Region region;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "client", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties(value = {"client", "hibernateLazyInitializer", "handler"}, allowSetters = true)
+	private List<Factura> facturas;
+	
+	public Client() {
+		this.facturas = new ArrayList<>();
+	}
+	
+
 	
 
 
